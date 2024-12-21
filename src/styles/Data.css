@@ -1,0 +1,69 @@
+.chart-wrapper
+{
+    max-height: 42vh;
+}
+
+.chart-container {
+    height: 400px;
+    margin: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.chart {
+    width: 100%;
+    height: 100%;
+}
+
+.header {
+    padding: 20px;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.search-container {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.stock-input {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 2px solid #dee2e6;
+    border-radius: 4px;
+    width: 200px;
+    transition: border-color 0.2s;
+}
+
+.stock-input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.loading-indicator {
+    color: #6c757d;
+    font-size: 14px;
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.update-status {
+    color: #6c757d;
+    font-size: 12px;
+    margin-top: 5px;
+}
