@@ -1,8 +1,14 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+jest.mock('axios');
+
+test('renders application heading', () => {
+  jest.useFakeTimers();
+  const { unmount } = render(<App />);
+  const headingElement = screen.getByText(/Stock Market Application/i);
+  expect(headingElement).toBeInTheDocument();
+  jest.runOnlyPendingTimers();
+  jest.useRealTimers();
+  unmount();
 });
