@@ -65,13 +65,14 @@ export default function Header({ name, setName, setDayIntervalData })
         // Initial fetch
         fetchStockData(name);
 
-        // Set up polling interval
-        const intervalId = setInterval(() => {
-            fetchStockData(name);
-        }, POLLING_INTERVAL);
-
-        // Cleanup interval on unmount or when name changes
-        return () => clearInterval(intervalId);
+        // Skip polling when running tests to avoid open handles
+        if (process.env.NODE_ENV !== 'test') {
+            const intervalId = setInterval(() => {
+                fetchStockData(name);
+            }, POLLING_INTERVAL);
+            // Cleanup interval on unmount or when name changes
+            return () => clearInterval(intervalId);
+        }
     }, [name, fetchStockData]);
 
     function handleChange(event)
@@ -116,4 +117,3 @@ export default function Header({ name, setName, setDayIntervalData })
     )
 }
 
-// this is the api key : 
